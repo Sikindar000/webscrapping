@@ -1,14 +1,23 @@
-import requests
-from bs4 import BeautifulSoup
+hex_string = "00 FF FF FF FF FF FF 00 09 E5 8A 0A 00 00 00 00 " \
+             "1A 1F 01 04 A5 22 13 78 03 2D C5 97 5C 5B 92 29 " \
+             "20 50 54 00 00 00 01 01 01 01 01 01 01 01 01 01 " \
+             "01 01 01 01 01 01 47 79 80 18 71 38 60 40 30 20 " \
+             "36 00 58 C2 10 00 00 1A 00 00 00 FD 00 30 78 8D " \
+             "8D 1F 01 0A 20 20 20 20 20 20 00 00 00 FE 00 57 " \
+             "33 4D 52 43 80 4E 56 31 35 4E 34 55 00 00 00 00 " \
+             "00 02 41 0F 99 00 00 00 00 0B 01 0A 20 20 01 01 " \
+             "70 13 79 00 00 03 01 14 A4 3C 00 04 7F 07 17 01 " \
+             "2F 00 1F 00 37 04 5F 00 02 00 05 00 00 00 00 00 " \
+             "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 " \
+             "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 " \
+             "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 " \
+             "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 " \
+             "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 " \
+             "00 00 00 00 00 00 00 00 00 00 00 00 00 00 EB 90"
 
+# Convert hex string to bytes object
+hex_bytes = bytes.fromhex(hex_string)
 
-# Making a GET request
-r = requests.get('https://www.geeksforgeeks.org/python-programming-language/')
+# Print the bytes
+print(hex_bytes)
 
-# check status code for response received
-# success code - 200
-print(r)
-
-# Parsing the HTML
-soup = BeautifulSoup(r.content, 'html.parser')
-print(soup.prettify())
