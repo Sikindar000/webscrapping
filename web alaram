@@ -1,0 +1,22 @@
+import time
+import webbrowser
+
+# Get the desired alarm time from the user in 24-hour format
+set_alarm = input("Set the website alarm as HH:MM:SS - ")
+
+# Get the URL of the website from the user
+url = input("Enter the website you want to open - ")
+
+# Get the current time in HH:MM:SS format
+actual_time = time.strftime("%H:%M:%S")
+
+# Loop until the alarm time is reached
+while actual_time != set_alarm:
+    print("The alarm is set for " + set_alarm + ". Current time is " + actual_time)
+    time.sleep(1)
+    actual_time = time.strftime("%H:%M:%S")
+
+# If the alarm time is reached, open the web browser
+if actual_time == set_alarm:
+    print("Your web browser is loading...")
+    webbrowser.open(url)
